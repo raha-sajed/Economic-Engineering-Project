@@ -8,8 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Economics Engineering Project</title>
     <style>
-      
-
       body {
         font-family: Arial, sans-serif;
         padding: 20px;
@@ -31,46 +29,51 @@
         align-items: center;
       }
       #splashScreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 1s ease;
-}
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 1s ease;
+      }
 
-#splashScreen.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
+      #splashScreen.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
 
-#splashImage {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
+      #splashImage {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
     </style>
   </head>
   <body>
-
     <div id="splashScreen">
-      <img src="./images/40450.jpg" alt="Cover" id="splashImage"  />
+      <img src="./images/40450.jpg" alt="Cover" id="splashImage" />
     </div>
 
     <h1
-      class="mx-auto text-4xl max-w-4xl max-[500px]:w-full max-[500px]:text-xl p-1 my-2.5 text-center text-sky-600 flex justify-center align-middle "
+      class="mx-auto text-4xl max-w-4xl max-[500px]:w-full max-[500px]:text-xl p-1 my-2.5 text-center text-sky-600 flex justify-center align-middle"
     >
-
-  <img src="./images/Screenshot 1404-03-10 at 9.47.10 PM.png" class="scale-50 my-auto max-[500px]:w-3/12 max-[500px]:h-3/12 " alt="">
+      <img
+        src="./images/Screenshot 1404-03-10 at 9.47.10 PM.png"
+        class="scale-50 my-auto max-[500px]:w-3/12 max-[500px]:h-3/12"
+        alt=""
+      />
 
       <span class="h-fit my-auto">Economic Engineering Project</span>
-      <img src="./images/Screenshot 1404-03-10 at 9.59.55 PM.png" class="scale-50 my-auto max-[500px]:w-3/12 max-[500px]:h-3/12" alt="">
+      <img
+        src="./images/Screenshot 1404-03-10 at 9.59.55 PM.png"
+        class="scale-50 my-auto max-[500px]:w-3/12 max-[500px]:h-3/12"
+        alt=""
+      />
     </h1>
     <p class="text-[15px] mx-auto w-full p-1 my-2.5 text-center">
       please add your Projects
@@ -121,11 +124,24 @@
 
       <canvas id="comparisonChart" class="mt-3 w-full hidden"></canvas>
     </div>
-    <div class="flex justify-between h-32 max-[300px]:h-20 max-[500px]:h-24  pt-5 max-[250px]:flex-wrap [250px]:pt-2.5 ">
-      <img src="./images/Screenshot 1404-03-10 at 9.32.04 PM.png" class="scale-100" alt="">
-      <img src="./images/Screenshot 1404-03-10 at 9.34.36 PM.png" class="scale-100" alt="">
-      <img src="./images/Screenshot 1404-03-10 at 9.52.43 PM.png" class="scale-100 box-border p-0 pt-3 pl-3" alt="">
-
+    <div
+      class="flex justify-between h-32 max-[300px]:h-20 max-[500px]:h-24 pt-5 max-[250px]:flex-wrap [250px]:pt-2.5"
+    >
+      <img
+        src="./images/Screenshot 1404-03-10 at 9.32.04 PM.png"
+        class="scale-100"
+        alt=""
+      />
+      <img
+        src="./images/Screenshot 1404-03-10 at 9.34.36 PM.png"
+        class="scale-100"
+        alt=""
+      />
+      <img
+        src="./images/Screenshot 1404-03-10 at 9.52.43 PM.png"
+        class="scale-100 box-border p-0 pt-3 pl-3"
+        alt=""
+      />
     </div>
     <div id="modal" class="backdrop-blur-xs">
       <div

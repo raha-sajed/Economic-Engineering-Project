@@ -97,8 +97,9 @@ function calculateAnalysis(p) {
   const P_Afactor = (p) =>
     (p.i * Math.pow(1 + p.i, p.n)) / (Math.pow(1 + p.i, p.n) - 1);
   const G_Pfactor = (p) =>
-    (((Math.pow(1 + p.i, p.n) - 1) / (p.i * Math.pow(1 + p.i, p.n))) -
-    p.n / Math.pow(1 + p.i, p.n))/p.i;
+    ((Math.pow(1 + p.i, p.n) - 1) / (p.i * Math.pow(1 + p.i, p.n)) -
+      p.n / Math.pow(1 + p.i, p.n)) /
+    p.i;
   const F_Pfactor = (p) => 1 / Math.pow(1 + p.i, p.n);
 
   let totalOp = 0;
