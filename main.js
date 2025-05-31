@@ -243,6 +243,9 @@ function getRandomColor() {
                 backgroundColor: labels.map(() => getRandomColor()),
 
                 borderWidth: 1,
+                categoryPercentage: 0.6,
+barPercentage: 0.4
+
               },
             ],
           },
