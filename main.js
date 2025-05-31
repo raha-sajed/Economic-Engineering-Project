@@ -97,8 +97,9 @@ function calculateAnalysis(p) {
   const P_Afactor = (p) =>
     (p.i * Math.pow(1 + p.i, p.n)) / (Math.pow(1 + p.i, p.n) - 1);
   const G_Pfactor = (p) =>
-    (Math.pow(1 + p.i, p.n) - 1) / (p.i * Math.pow(1 + p.i, p.n)) -
-    p.n / Math.pow(1 + p.i, p.n);
+    (((Math.pow(1 + p.i, p.n) - 1) / (p.i * Math.pow(1 + p.i, p.n))) -
+    p.n / Math.pow(1 + p.i, p.n))/p.i;
+  const F_Pfactor = (p) => 1 / Math.pow(1 + p.i, p.n);
 
   let totalOp = 0;
   if (p.of > 0) {
@@ -108,13 +109,12 @@ function calculateAnalysis(p) {
   }
 
   const PW_Rev = p.rev * A_Pfactor(p) + p.g * G_Pfactor(p);
-  const PW_Cost = p.ac * ((1 - Math.pow(1 + p.i, -p.n)) / p.i);
-  const PW_SV = p.sv * Math.pow(1 + p.i, -p.n);
+  const PW_Cost = p.ac * A_Pfactor(p);
+  const PW_SV = p.sv * F_Pfactor(p);
   const NPW = -p.inv - totalOp - PW_Cost + PW_Rev + PW_SV;
   const NEUA = NPW * P_Afactor(p);
   const BCR = (PW_Rev + PW_SV) / (p.inv + totalOp + PW_Cost);
-  const F = PW_Rev * Math.pow(1 + p.i, p.n) + p.sv;
-  const ROR = ((F - p.inv) / p.inv) * 100;
+  const ROR = p.i;
 
   p.analysis = { NPW, NEUA, BCR, ROR };
 }
@@ -275,3 +275,10 @@ function drawChart() {
     },
   });
 }
+window.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    const splash = document.getElementById("splashScreen");
+    splash.classList.add("hidden");
+    setTimeout(() => splash.remove(), 1000); // بعد از انیمیشن حذف کامل
+  }, 2000); // زمان نمایش (۳ ثانیه)
+});
